@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Barber 007 | Tu estilo empieza aquí</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --negro-puro: #0a0a0a;
+            --negro-suave: #141414;
+            --dorado: #d4af37;
+            --dorado-brillante: #f1c40f;
+            --blanco: #e0e0e0;
+            --gris-texto: #a0a0a0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--negro-puro);
+            color: var(--blanco);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        nav {
+            background-color: rgba(10, 10, 10, 0.95);
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--dorado);
+            letter-spacing: 3px;
+        }
+
+        .nav-links a {
+            color: var(--blanco);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--dorado); }
+
+        /* --- HERO --- */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=1000'); /* Imagen de fondo genérica de barbería */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 { font-size: 4rem; color: var(--dorado); margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; color: var(--blanco); }
+
+        /* --- SECCIONES GENERALES --- */
+        section { padding: 80px 10%; }
+        h2 { 
+            text-align: center; 
+            font-size: 2.5rem; 
+            color: var(--dorado); 
+            margin-bottom: 40px; 
+            text-transform: uppercase;
+        }
+
+        /* --- SERVICIOS --- */
+        .grid-servicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--negro-suave);
+            padding: 30px;
+            border: 1px solid #222;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover { border-color: var(--dorado); transform: translateY(-5px); }
+        .card i { font-size: 2.5rem; color: var(--dorado); margin-bottom: 15px; }
+        .card h3 { margin-bottom: 10px; }
+        .card p { color: var(--gris-texto); font-size: 0.9rem; }
+
+        /* --- HORARIOS Y RESERVAS --- */
+        .info-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .info-box {
+            background: var(--negro-suave);
+            padding: 40px;
+            flex: 1;
+            min-width: 300px;
+            border-left: 4px solid var(--dorado);
+        }
+
+        .btn-reserva {
+            display: inline-block;
+            background: var(--dorado);
+            color: var(--negro-puro);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-reserva:hover { background: var(--dorado-brillante); box-shadow: 0 0 15px var(--dorado); }
+
+        /* --- FAQ --- */
+        .faq { max-width: 800px; margin: 0 auto; }
+        .faq-item { margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 10px; }
+        .faq-item h4 { color: var(--dorado); margin-bottom: 5px; }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #050505;
+            color: var(--gris-texto);
+            border-top: 1px solid #111;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { flex-direction: column; gap: 15px; }
+            .nav-links a { margin: 0 10px; font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MARIO BARBER 007</div>
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#reservas">Reservas</a>
+            <a href="#faq">Preguntas</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <h1>MARIO BARBER 007</h1>
+        <p>✂️ Estilo, precisión y confianza en cada corte. Especialistas en cortes modernos y clásicos en Paraguay.</p>
+        <a href="#reservas" class="btn-reserva">Agendar Turno</a>
+    </section>
+
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="grid-servicios">
+            <div class="card">
+                <i class="fas fa-cut"></i>
+                <h3>Cortes de Cabello</h3>
+                <p>Estilos modernos, clásicos y personalizados según tu preferencia.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-user-tie"></i>
+                <h3>Arreglo de Barba</h3>
+                <p>Perfilado y cuidado de barba para un look limpio y profesional.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-magic"></i>
+                <h3>Cambio de Estilo</h3>
+                <p>Asesoramiento experto para encontrar el corte ideal para tu rostro.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-child"></i>
+                <h3>Todas las edades</h3>
+                <p>Atención especial para niños, jóvenes y adultos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reservas" style="background-color: #0f0f0f;">
+        <div class="info-container">
+            <div class="info-box">
+                <h2>Horarios de Atención</h2>
+                <p><strong>Lunes a Sábado:</strong> 8:00 a.m. – 8:00 p.m.</p>
+                <p><strong>Domingo:</strong> 8:30 a.m. – 11:30 a.m.</p>
+                <hr style="margin: 20px 0; border-color: #333;">
+                <p><i class="fas fa-map-marker-alt" style="color:var(--dorado)"></i> Av. María Auxiliadora, Paraguay</p>
+            </div>
+            <div class="info-box">
+                <h2>Reserva tu lugar</h2>
+                <p>No esperes para verte mejor. Atendemos de forma profesional en un ambiente cómodo y relajado.</p>
+                <p><strong>Teléfono:</strong> 0983 106804</p>
+                <a href="https://wa.me/595983106804" class="btn-reserva">
+                    <i class="fab fa-whatsapp"></i> Chat WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <h4>¿Necesito reservar turno?</h4>
+                <p>No es obligatorio, pero te recomendamos escribirnos para asegurar tu lugar sin esperas.</p>
+            </div>
+            <div class="faq-item">
+                <h4>¿Atienden a niños?</h4>
+                <p>¡Claro! Realizamos cortes para todas las edades.</p>
+            </div>
+            <div class="faq-item">
+                <h4>¿Qué estilos de corte hacen?</h4>
+                <p>Desde los más clásicos hasta las últimas tendencias y degradados modernos.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mario Barber 007 — Tu estilo empieza aquí. 💈✂️</p>
+    </footer>
+
+</body>
+</html>
